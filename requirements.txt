@@ -2,4 +2,5 @@
 numpy==1.26.0
 kornia==0.7.0
 scipy==1.11.3
+opencv-python==4.8.1.78
 

@@ -322,7 +322,7 @@ def process_single_img(queue, usm_sharper, extra_sharpen_time, outlier_threshold
         sketch_map = get_xdog_sketch_map(img, outlier_threshold)
 
         
-        cv2.imwrite(store_path, sketch_map)
+        cv2.imwrite(store_path, sketch_map*255)
 
     print("Finish all program")
 
@@ -377,8 +377,8 @@ if __name__ == "__main__":
         request_list.append(None)
         dir_list = dir_list[num:]
 
-        # process_single_img(request_list, usm_sharper, extra_sharpen_time)   # This is for debug purpose
-        p = mp.Process(target=process_single_img, args=(request_list, usm_sharper, extra_sharpen_time, outlier_threshold))
-        p.start()
+        process_single_img(request_list, usm_sharper, extra_sharpen_time, outlier_threshold)   # This is for debug purpose
+        # p = mp.Process(target=process_single_img, args=(request_list, usm_sharper, extra_sharpen_time, outlier_threshold))
+        # p.start()
 
     print("Submitted all jobs!")
