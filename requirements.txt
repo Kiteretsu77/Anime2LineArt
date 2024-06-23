@@ -1,0 +1,5 @@
+# Relatively static library (These libraries are comparatively stable, so the version here can be versatile, we attached the version we used in the experiments)
+numpy==1.26.0
+kornia==0.7.0
+scipy==1.11.3
+
